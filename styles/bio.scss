@@ -1,0 +1,312 @@
+@import "./partials/mixin";
+@import "./partials/variables";
+
+
+ 
+@include reset;
+a {
+    text-decoration: none;
+}
+p {
+ font-family: $font-regular;
+}
+h1 {
+    margin: 1.5rem 0 1rem 0;
+    @include pageHeaderMobile;
+
+    @include tablet {
+        @include pageHeaderTabDesk;
+        margin: 3rem 0 2.25rem 0
+    }
+}
+
+h2{
+    margin: 1.5rem 0 1rem 0;
+    @include sectionHeaderMobile;
+
+    @include tablet {
+        @include sectionHeaderTabDesk;
+    }
+}
+h3 {
+    @include subHeaderMobile;
+
+    @include tablet {
+        @include subHeaderTabDesk;
+        margin: 3rem 0 2.25rem 0
+    }
+}
+.container {
+
+    margin: 0 auto;
+}
+.navigation {
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: $color-primary-1;
+
+    @include tablet {
+        flex-direction: row; 
+    }
+
+    &__logo {
+        height: 1.25rem;
+        width: 7.5rem;
+        padding-top: 1rem;
+        flex: 1;
+        @include tablet{
+            padding: 0 1.5rem;
+            width: 100%;
+        }
+    }
+    &__menu {
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        @include tablet {
+            justify-content: flex-start;
+        }
+        &--item {
+            list-style: none;
+            height: 100%;
+            padding: 1rem 0;
+            text-align: center;
+            @include subHeaderMobile;
+            text-decoration: none;
+            color: $color-primary-3;
+            width: 100%;
+
+            @include tablet {
+                width: fit-content;
+                margin: 0 1.5rem;
+                @include bodyCopyTabDesk;
+            }
+        } 
+    }
+}
+.active {
+    @include actvie;
+}
+.inactive {
+    @include inactive;
+}
+.hero {
+    display: flex;
+    background-image: url(../assets/images/hero-bio.jpg);
+    min-height: 15rem;
+    background-size:cover;
+    background-position: center;
+    align-items: center;
+    padding: 0 1rem;
+    margin-bottom: 1rem;
+    @include tablet {
+        min-height: 30rem;
+        padding: 0 2.25rem;
+        margin-bottom: 2.25rem;
+    }
+    
+    &__title {
+        color: $color-primary-3;
+        
+        @include tablet {
+            @include pageHeaderTabDesk;
+            margin: 3rem 0 2.25rem 0
+        }
+    }
+}
+
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0 1rem;
+    color: $color-primary-1;
+
+    @include tablet {
+        padding: 0 2.25rem;
+    }
+}
+
+.about {
+    display: flex;
+    flex-direction: column;
+    color: $color-primary-1;
+    
+    @include tablet {
+        margin: 0 2.25rem;
+    }
+    &__name {
+        margin: 0;
+        @include subHeaderMobile;
+
+
+        @include tablet {
+            @include subHeaderTabDesk;
+        }
+    }
+ 
+}
+
+.intro{
+ @include bodyCopyMobile;
+
+ @include tablet{
+     @include bodyCopyTabDesk;
+ }
+    &__title {
+        @include tablet {
+            margin: 3rem 0 1rem 0;
+        }
+    }
+    &__text {
+        
+        @include tablet {
+            display: flex;
+            gap: 2.25rem;
+            margin-bottom: 2.25rem;
+        }
+    }
+}
+
+.gallery {
+    display: flex;
+    padding: 0 1rem; 
+    flex-direction: column;
+    justify-content: flex-start;
+    color: $color-primary-1;
+    background: $color-secondary-3;
+    
+    @include tablet {
+        padding: 0 2.25rem;
+    }
+    &__container{
+        display: flex;
+        flex-direction: column;
+        @include tablet {
+            flex-flow: row wrap;
+            justify-content: space-between;
+            margin-bottom: 1rem;
+        }
+
+        &--img {
+        margin-bottom: 1rem;
+
+        @include tablet {
+            
+            max-width: 31%;
+            margin: 1.5rem 0;
+        }
+        }
+    }
+}
+
+footer {
+    background: $color-primary-1;
+}
+.footer {
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column; 
+    color:  $color-primary-3;
+    position: relative;
+
+    @include tablet {
+        padding: 0 2.25rem;
+    }
+
+    &__title {
+        color:  $color-primary-3;
+    }
+
+    &__socials {
+        margin-bottom: 1rem;
+        display: flex;
+        
+        @include tablet{
+        
+            margin: 1.5rem 0 1rem 0;
+        padding: 0 2.25rem ;
+        }
+        
+        a{
+            margin-right: 1rem;
+            
+            @include tablet {
+                img{
+                    width: 1.5rem;
+                    height: 1.5rem;
+                 }
+            }
+        }
+        
+    }
+    .contact-container {
+        display: flex;
+        flex-direction: column;
+        @include footerCopyMobile;
+    
+        @include tablet{
+            flex-direction: row;
+            justify-content: space-between;
+            @include footerCopyTabDesk;
+        }
+    }
+    &__contact {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 1rem;
+
+        @include tablet {
+            margin-bottom: 2.25rem;
+        }
+        
+        &--name {
+            @include subHeaderMobile;
+            margin: 0;
+        }
+        &--email {
+            color: $color-primary-3;
+            font-family: $font-regular;
+            font-size: .8125rem;
+        }
+    }
+
+    &__logo {
+        @include subHeaderTabDesk;
+        color: $color-primary-3;
+        padding: 1rem 0;
+        display: inline-block;
+        @include tablet {
+            flex: 1;
+        img{
+            display: inline-block;
+        }
+
+    }
+    img {
+        width: 120px;
+    }
+    }
+}
+.footer-connect {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet {
+        width: 80%;
+        justify-content: flex-start;
+        
+    }
+
+    &__header {
+        display: flex;
+    }
+}
+
+.copyright{
+    font-size: .8125rem;
+    line-height: 1.125rem;
+    margin-bottom: 1rem;
+}
