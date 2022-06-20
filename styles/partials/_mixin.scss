@@ -1,109 +1,109 @@
 @mixin reset {
-    *, *::before, *::after {
-        box-sizing: border-box;
-    }
-    
-    html, body, ul, ol{
-        margin: 0;
-        padding: 0;
-        list-style: none;
-    }
-    body {
-        line-height: 1;
-    }
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html,
+  body,
+  ul,
+  ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  body {
+    line-height: 1;
+  }
 }
 
 //FONT MIXINS FOR MOBILE
 
 @mixin pageHeaderMobile {
-    font-family: $font-bold;
-    font-size: 1.5rem;
-    line-height: 2rem;
+  font-family: $font-bold;
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 
 @mixin sectionHeaderMobile {
-    font-family: $font-bold;
-    font-size: 1.5rem;
-    line-height: 2rem;
+  font-family: $font-bold;
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 @mixin subHeaderMobile {
-    font-family: $font-demi;
-    font-size: .875rem;
-    line-height: 1.375rem;
+  font-family: $font-demi;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
 }
 @mixin bodyCopyMobile {
-    font-family: $font-regular;
-    font-size: .8125rem;
-    line-height: 1.125rem;
+  font-family: $font-regular;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
 }
 
 @mixin footerCopyMobile {
-    font-family: $font-regular;
-    font-size: .8125rem;
-    line-height:1.125rem;
+  font-family: $font-regular;
+  font-size: 0.8125rem;
+  line-height: 1.125rem;
 }
 
 @mixin labelBtnMobile {
-    font-family: $font-bold;
-    font-size: .625rem;
-    line-height: 1.25rem;
+  font-family: $font-bold;
+  font-size: 0.625rem;
+  line-height: 1.25rem;
 }
 
 //FONT MIXINS TABLET-WEB
 
 @mixin pageHeaderTabDesk {
-    font-family: $font-bold;
-    font-size: 3.75rem;
-    line-height: 4.25rem;
+  font-family: $font-bold;
+  font-size: 3.75rem;
+  line-height: 4.25rem;
 }
 @mixin sectionHeaderTabDesk {
-    font-family: $font-bold;
-    font-size: 2.25rem;
-    line-height: 2.75rem;
+  font-family: $font-bold;
+  font-size: 2.25rem;
+  line-height: 2.75rem;
 }
 @mixin subHeaderTabDesk {
-    font-family: $font-demi;
-    font-size: 1.5rem;
-    line-height: 2rem;
+  font-family: $font-demi;
+  font-size: 1.5rem;
+  line-height: 2rem;
 }
 @mixin bodyCopyTabDesk {
-    font-family: $font-regular;
-    font-size: .875rem;
-    line-height: 1.375rem;
+  font-family: $font-regular;
+  font-size: 0.875rem;
+  line-height: 1.375rem;
 }
 @mixin footerCopyTabDesk {
-    font-family: $font-regular;
-    font-size: .875rem;
-    line-height: 1.25rem;
+  font-family: $font-regular;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 @mixin labelBtnTabDesk {
-    font-family: $font-bold;
-    font-size: .75rem;
-    line-height: 1.25rem;
+  font-family: $font-bold;
+  font-size: 0.75rem;
+  line-height: 1.25rem;
 }
 
 @mixin actvie {
-    border-bottom: 4px solid white
+  border-bottom: 4px solid white;
 }
 
 @mixin inactive {
-
- @include bodyCopyMobile;
- color: $color-secondary-2;    
+  @include bodyCopyMobile;
+  color: $color-secondary-2;
 }
 
 @mixin tablet {
-
-    @media (min-width: 768px) {
-        @content;
-    }
-
+  @media (min-width: 768px) {
+    @content;
+  }
 }
 
 @mixin desktop {
-
-    @media (min-width: 1280px) {
-        @content;
-    }
-
+  @media (min-width: 1280px) {
+    @content;
+  }
 }
