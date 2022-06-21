@@ -152,33 +152,41 @@ h3 {
   font-size: 0.8125rem;
   line-height: 1.125rem;
   color: #e1e1e1;
+  line-height: 166%;
+  border-bottom: 4px solid none;
+  transition: border 0.2s ease-out;
+}
+.inactive:hover {
+  border-bottom: 4px solid white;
 }
 
 .hero {
   display: flex;
   background-image: url(../assets/images/hero-bio.jpg);
-  min-height: 15rem;
+  height: 56vw;
+  width: 100%;
   background-size: cover;
   background-position: center;
   align-items: center;
   padding: 0 1rem;
   margin-bottom: 1rem;
+  position: relative;
 }
 @media (min-width: 768px) {
   .hero {
-    min-height: 30rem;
     padding: 0 2.25rem;
     margin-bottom: 2.25rem;
   }
 }
 @media (min-width: 1280px) {
   .hero {
-    min-height: 40rem;
     padding: 0 6.25rem;
   }
 }
 .hero__title {
   color: #ffffff;
+  position: absolute;
+  z-index: 1;
 }
 @media (min-width: 768px) {
   .hero__title {
@@ -187,6 +195,16 @@ h3 {
     line-height: 4.25rem;
     margin: 3rem 0 2.25rem 0;
   }
+}
+.hero::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(50, 50, 50, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
 }
 
 .about-container {
