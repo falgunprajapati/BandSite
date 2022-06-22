@@ -1,4 +1,4 @@
 #Ignore scss map files
-   *.css.map
+x*.css.map
 *.sass.map
 *.scss.map
