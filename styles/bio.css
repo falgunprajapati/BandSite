@@ -337,6 +337,36 @@ h3 {
   }
 }
 
+.comment {
+  display: flex;
+  flex-direction: column;
+}
+.comment__title {
+  font-family: "AvenirNextLTPro-Bold";
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+.comment__container {
+  display: flex;
+  justify-content: center;
+}
+.comment__container--img {
+  height: 2.25rem;
+  width: 2.25rem;
+  border-radius: 100%;
+  background: url(../assets/images/Mohan-muruge.jpg);
+  background-size: cover;
+  background-position: center;
+}
+.comment__container--form {
+  padding: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
 footer {
   background: #323232;
 }
@@ -476,4 +506,4 @@ footer {
   font-size: 0.8125rem;
   line-height: 1.125rem;
   margin-bottom: 1rem;
-}/*# sourceMappingURL=bio.css.map */
+}

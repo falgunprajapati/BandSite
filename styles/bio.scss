@@ -241,6 +241,39 @@ h3 {
   }
 }
 
+.comment{
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    @include pageHeaderMobile
+  }
+&__container{
+  display: flex;
+  justify-content: center;
+
+
+  &--img {
+    height: 2.25rem;
+    width: 2.25rem;
+    border-radius: 100%;
+    background: url(../assets/images/Mohan-muruge.jpg) ;
+    background-size: cover;
+    background-position: center;
+    
+  }
+
+  &--form {
+    padding: 1rem;
+  }
+}  
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+}
+
 footer {
   background: $color-primary-1;
 }
@@ -362,3 +395,6 @@ footer {
     margin-bottom: 1rem;
   }
 }
+
+
+
