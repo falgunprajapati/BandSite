@@ -144,19 +144,19 @@
               
               <label class="form__comment" for="formComment" >COMMENT</label>
               
-              <textarea class="form__input" id="formComment" type="text" placeholder="Add a new comment" name="formComment"></textarea>
-              <button class="form__btn btn">COMMENT</button>
+              <textarea class="form__input comment-input" id="formComment" type="text" placeholder="Add a new comment" name="formComment" required></textarea>
+              <button class="form__btn btn" id="formSubmit" type="submit">COMMENT</button>
             </form>
           </div>
         </div>
 
-        <div class="comment__list"></div>
+        <div class="comment__list" id="commentList"></div>
       </section>
     </main>
 
 
     <!-- END OF MAIN  -->
-    
+
     <footer>
       <div class="footer">
         <div class="footer__main">
@@ -229,5 +229,8 @@
           Copyright The Bees Knees &copy; 2021 All Right Reserved
         </p></div>
     </footer>
+
+    <script src="./scripts/index-page.js"></script>
   </body>
 </html>
+

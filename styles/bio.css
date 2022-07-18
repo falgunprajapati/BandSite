@@ -80,6 +80,25 @@ h3 {
   }
 }
 
+.btn {
+  height: 2.5rem;
+  width: 100%;
+  background: #323232;
+  color: #ffffff;
+  border-radius: 5px;
+  border: none;
+  margin: 1rem 0;
+  font-family: "AvenirNextLTPro-Bold";
+  font-size: 0.75rem;
+  line-height: 1.25rem;
+}
+@media (min-width: 768px) {
+  .btn {
+    width: 9.325rem;
+    margin: 0.5rem;
+  }
+}
+
 .navigation {
   display: flex;
   flex-direction: column;
@@ -340,15 +359,37 @@ h3 {
 .comment {
   display: flex;
   flex-direction: column;
+  padding: 0 1rem;
+  margin: 1rem;
+}
+@media (min-width: 768px) {
+  .comment {
+    padding: 0 2.25rem;
+    margin-bottom: 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .comment {
+    padding: 0 6.25rem;
+  }
 }
 .comment__title {
   font-family: "AvenirNextLTPro-Bold";
   font-size: 1.5rem;
   line-height: 2rem;
+  color: #323232;
+}
+@media (min-width: 768px) {
+  .comment__title {
+    font-family: "AvenirNextLTPro-Bold";
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+  }
 }
 .comment__container {
   display: flex;
   justify-content: center;
+  border-bottom: 2px solid #e1e1e1;
 }
 .comment__container--img {
   height: 2.25rem;
@@ -357,14 +398,70 @@ h3 {
   background: url(../assets/images/Mohan-muruge.jpg);
   background-size: cover;
   background-position: center;
+  margin: 1rem 0;
 }
 .comment__container--form {
-  padding: 1rem;
+  padding: 1rem 0;
+  width: 100%;
 }
 
 .form {
   display: flex;
   flex-direction: column;
+  margin: 0 1rem;
+}
+.form__name {
+  font-family: "AvenirNextLTPro-Demi";
+  color: #a4a4a4;
+  margin-bottom: 1rem;
+}
+.form__input {
+  border: none;
+  height: 3rem;
+  border: 1px solid #e1e1e1;
+  border-radius: 5px;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  font-family: "AvenirNextLTPro-Regular";
+}
+.form__input:active {
+  border: 1px solid black;
+}
+.form__comment {
+  font-family: "AvenirNextLTPro-Demi";
+  color: #a4a4a4;
+  margin-bottom: 1rem;
+}
+.form__btn {
+  margin: 0.5rem 0;
+}
+
+.comment-input {
+  height: 8rem;
+}
+
+.comment-area {
+  display: flex;
+  gap: 1rem;
+}
+.comment-area__content .comment__list--user {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: "AvenirNextLTPro-Demi";
+}
+.comment-area__content .comment__list--timestamp {
+  font-family: "AvenirNextLTPro-Regular";
+  color: #a4a4a4;
+}
+.comment-area__content .comment__list--text {
+  font-family: "AvenirNextLTPro-Regular";
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+}
+
+.comment__list--item {
+  border-bottom: 2px solid #e1e1e1;
 }
 
 footer {

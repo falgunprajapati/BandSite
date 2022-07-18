@@ -35,6 +35,22 @@ h3 {
   }
 }
 
+.btn {
+  height: 2.5rem;
+  width: 100%;
+  background: $color-primary-1;
+  color:  $color-primary-3;
+  border-radius: 5px;
+  border: none;
+  margin: 1rem 0;
+  
+  @include labelBtnTabDesk;
+
+  @include tablet {
+    width: 9.325rem;
+    margin: .5rem;
+  }
+}
 .navigation {
   display: flex;
   flex-direction: column;
@@ -244,14 +260,29 @@ h3 {
 .comment{
   display: flex;
   flex-direction: column;
+padding: 0 1rem;
+margin: 1rem;
 
+@include tablet {
+  padding: 0 2.25rem;
+  margin-bottom: 2.25rem;
+}
+
+@include desktop {
+  padding: 0 6.25rem;
+}
   &__title {
-    @include pageHeaderMobile
+    @include pageHeaderMobile;
+    color: $color-primary-1;
+
+    @include tablet {
+    @include sectionHeaderTabDesk;
+  }
   }
 &__container{
   display: flex;
   justify-content: center;
-
+  border-bottom: 2px solid $color-secondary-2;
 
   &--img {
     height: 2.25rem;
@@ -260,11 +291,13 @@ h3 {
     background: url(../assets/images/Mohan-muruge.jpg) ;
     background-size: cover;
     background-position: center;
+    margin: 1rem 0;
     
   }
 
   &--form {
-    padding: 1rem;
+    padding: 1rem 0;
+    width: 100%;
   }
 }  
 }
@@ -272,8 +305,70 @@ h3 {
 .form {
   display: flex;
   flex-direction: column;
+  margin: 0 1rem;
+  
+  &__name{
+    font-family: $font-demi;
+    color: $color-primary-2;
+    margin-bottom: 1rem;
+  }
+
+  &__input {
+    border: none;
+    height: 3rem;
+    border: 1px solid $color-secondary-2;
+    border-radius: 5px;
+    padding: .75rem;
+    margin-bottom: 1rem;
+    font-family: $font-regular;
+    &:active {
+      border: 1px solid black;
+    }
+  }
+
+  &__comment {
+    font-family: $font-demi;
+    color: $color-primary-2;
+    margin-bottom: 1rem;
+  }
+
+  &__btn{
+    margin: .5rem 0;
+  }
 }
 
+
+.comment-input{
+  height: 8rem;
+}
+
+.comment-area{
+  display: flex;
+  gap: 1rem;
+
+  &__content{
+    
+    .comment__list--user{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-family: $font-demi;
+
+
+    }
+    .comment__list--timestamp {
+      font-family: $font-regular;
+      color: $color-primary-2;
+    }
+
+    .comment__list--text{
+      @include bodyCopyTabDesk;
+    }
+  }
+}
+.comment__list--item {
+  border-bottom: 2px solid $color-secondary-2;
+}
 footer {
   background: $color-primary-1;
 }

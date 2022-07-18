@@ -1,0 +1,195 @@
+@font-face {
+  font-family: "AvenirNextLTPro-Bold";
+  src: url(../assets/fonts/AvenirNextLTPro-Bold.otf);
+}
+@font-face {
+  font-family: "AvenirNextLTPro-Demi";
+  src: url(../assets/fonts/AvenirNextLTPro-Demi.otf);
+}
+@font-face {
+  font-family: "AvenirNextLTPro-Regular";
+  src: url(../assets/fonts/AvenirNextLTPro-Regular.otf);
+}
+.hero {
+  display: flex;
+  background-image: url(../assets/images/hero-shows.jpg);
+  height: 70vw;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  align-items: center;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+  position: relative;
+}
+@media (min-width: 768px) {
+  .hero {
+    height: 60vh;
+    padding: 0 2.25rem;
+    margin-bottom: 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .hero {
+    padding: 0 6.25rem;
+    flex-direction: row;
+  }
+}
+.hero__title {
+  display: flex;
+  flex-direction: column;
+  color: #ffffff;
+  height: 100%;
+  z-index: 1;
+}
+.hero__title--sub {
+  font-family: "AvenirNextLTPro-Demi";
+  font-size: 0.875rem;
+  line-height: 1.375rem;
+}
+.hero__title--main {
+  font-family: "AvenirNextLTPro-Bold";
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+@media (min-width: 768px) {
+  .hero__title {
+    font-family: "AvenirNextLTPro-Bold";
+    font-size: 3.75rem;
+    line-height: 4.25rem;
+    margin: 3rem 0 2.25rem 0;
+  }
+}
+.hero::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(50, 50, 50, 0.5);
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.hero__player {
+  z-index: 1;
+}
+
+.shows {
+  display: flex;
+  flex-direction: column;
+}
+.shows__title {
+  padding: 0 1rem;
+}
+@media (min-width: 768px) {
+  .shows {
+    padding: 0 2.25rem;
+    margin-bottom: 2.25rem;
+  }
+}
+@media (min-width: 1280px) {
+  .shows {
+    flex-direction: row;
+  }
+  .shows-mobile {
+    flex: 1;
+  }
+}
+
+.title {
+  color: #a4a4a4;
+  font-family: "AvenirNextLTPro-Demi";
+  font-size: 0.8125rem;
+  text-transform: uppercase;
+}
+
+.property-date {
+  color: #000000;
+  font-family: "AvenirNextLTPro-Demi";
+}
+
+.property {
+  color: #000000;
+  font-family: "AvenirNextLTPro-Regular";
+}
+
+.shows-mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 0 1rem;
+  margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+  .shows-mobile {
+    padding: 0 6.25rem;
+    margin-top: 2.25rem;
+  }
+}
+
+.shows__container--mobile {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  position: relative;
+  border-bottom: 2px solid #e1e1e1;
+}
+@media (min-width: 768px) {
+  .shows__container--mobile {
+    flex-direction: row;
+    align-items: center;
+    margin-bottom: 0;
+  }
+}
+
+.shows__container--item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media (min-width: 768px) {
+  .shows__container--item {
+    width: 30%;
+  }
+  .shows__container--item .title {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) {
+  .shows-tabDesk {
+    display: flex;
+    flex-direction: column;
+  }
+  .shows-tabDesk__titles {
+    display: flex;
+    justify-content: space-between;
+  }
+  .shows-tabDesk__container {
+    display: flex;
+    flex-direction: column;
+  }
+  .shows-tabDesk__container-list {
+    display: flex;
+  }
+}
+
+.shows--tabDesk__container-list {
+  display: flex;
+  justify-content: space-between;
+}
+
+.shows-tabDesk__titles {
+  display: none;
+}
+@media (min-width: 768px) {
+  .shows-tabDesk__titles {
+    display: flex;
+    justify-content: space-between;
+  }
+  .shows-tabDesk__titles p.title {
+    width: 30%;
+  }
+}
