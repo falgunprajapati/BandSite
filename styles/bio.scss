@@ -43,12 +43,17 @@ h3 {
   border-radius: 5px;
   border: none;
   margin: 1rem 0;
+  transition: all .2s;
   
   @include labelBtnTabDesk;
 
   @include tablet {
     width: 9.325rem;
     margin: .5rem;
+  }
+
+  &:hover {
+    background: $color-secondary-1;
   }
 }
 .navigation {
@@ -271,14 +276,14 @@ margin: 1rem;
 @include desktop {
   padding: 0 6.25rem;
 }
-  &__title {
+&__title {
     @include pageHeaderMobile;
     color: $color-primary-1;
 
     @include tablet {
     @include sectionHeaderTabDesk;
-  }
-  }
+}
+}
 &__container{
   display: flex;
   justify-content: center;
@@ -298,8 +303,29 @@ margin: 1rem;
   &--form {
     padding: 1rem 0;
     width: 100%;
+
+    @include tablet {
+      width: 80%;
+    }
+    @include desktop {
+      width: 60%;
+    }
   }
 }  
+&__list{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+margin: 0 auto;
+  @include tablet {
+    width: 80%;
+  }
+
+  @include desktop {
+    width: 60%;
+  }
+}
 }
 
 .form {

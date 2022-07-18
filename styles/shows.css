@@ -152,6 +152,7 @@
 @media (min-width: 768px) {
   .shows__container--item {
     width: 30%;
+    margin: 1rem 0;
   }
   .shows__container--item .title {
     display: none;
