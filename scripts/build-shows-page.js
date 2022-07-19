@@ -61,28 +61,5 @@ function displayShowsMob(show) {
     showsListMobile.appendChild(showsDiv)
 }
 
-///for tablet or desktop view
-
-// const showsListTabDesk = document.getElementById('showsListTabDesk')
-// function displayShowsTabDesk(show) {
-//     // created div inside the comment list container
-
-//     const showsDiv = document.createElement('div');
-//     showsDiv.className = 'shows--tabDesk__container-list';
-
-//     showsDiv.innerHTML = `
-  
-//         <p class="property">${show.date}</p>
-  
-//         <p class="property">${show.venue}</p>
- 
-//         <p class="property">${show.location}</p>
-
-//       <button class="btn shows__btn">BUY TICKET</button>
-//     `;
-//     showsListTabDesk.appendChild(showsDiv)
-// }
-
-
 shows.map(displayShowsMob);
 // shows.map(displayShowsTabDesk);

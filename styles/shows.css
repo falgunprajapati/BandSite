@@ -10,57 +10,79 @@
   font-family: "AvenirNextLTPro-Regular";
   src: url(../assets/fonts/AvenirNextLTPro-Regular.otf);
 }
-.hero {
+.hero-shows {
   display: flex;
+  flex-direction: column;
   background-image: url(../assets/images/hero-shows.jpg);
-  height: 70vw;
+  height: 100%;
   width: 100%;
   background-size: cover;
   background-position: center;
-  align-items: center;
-  padding: 0 1rem;
+  padding: 1rem;
   margin-bottom: 1rem;
   position: relative;
 }
 @media (min-width: 768px) {
-  .hero {
-    height: 60vh;
-    padding: 0 2.25rem;
+  .hero-shows {
+    padding: 1.5rem 2.25rem;
     margin-bottom: 2.25rem;
   }
 }
 @media (min-width: 1280px) {
-  .hero {
+  .hero-shows {
+    height: 50vw;
+    align-items: center;
+    justify-content: space-between;
     padding: 0 6.25rem;
     flex-direction: row;
   }
 }
-.hero__title {
-  display: flex;
-  flex-direction: column;
+.hero-shows__title {
   color: #ffffff;
-  height: 100%;
   z-index: 1;
 }
-.hero__title--sub {
+.hero-shows__title--sub {
   font-family: "AvenirNextLTPro-Demi";
   font-size: 0.875rem;
   line-height: 1.375rem;
 }
-.hero__title--main {
+@media (min-width: 768px) {
+  .hero-shows__title--sub {
+    font-family: "AvenirNextLTPro-Demi";
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
+}
+.hero-shows__title--main {
   font-family: "AvenirNextLTPro-Bold";
   font-size: 1.5rem;
   line-height: 2rem;
 }
 @media (min-width: 768px) {
-  .hero__title {
+  .hero-shows__title--main {
     font-family: "AvenirNextLTPro-Bold";
     font-size: 3.75rem;
     line-height: 4.25rem;
-    margin: 3rem 0 2.25rem 0;
+    margin: 1.5rem 0;
   }
 }
-.hero::after {
+.hero-shows__player {
+  z-index: 1;
+  padding-top: 1rem;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .hero-shows__player {
+    width: 70%;
+    padding-top: 1.5rem;
+  }
+}
+@media (min-width: 1280px) {
+  .hero-shows__player {
+    width: 50%;
+  }
+}
+.hero-shows::after {
   content: "";
   display: block;
   width: 100%;
@@ -69,10 +91,6 @@
   position: absolute;
   top: 0;
   left: 0;
-}
-
-.hero__player {
-  z-index: 1;
 }
 
 .shows {

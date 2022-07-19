@@ -1,47 +1,69 @@
-@import "./partials/mixin";
-@import "./partials/variables";
+@use "./partials/mixin" as * ;
+@use "./partials/variables" as *;
 
 
-.hero {
+.hero-shows {
     display: flex;
+    flex-direction: column;
     background-image: url(../assets/images/hero-shows.jpg);
-    height: 70vw;
+    height: 100%;
     width: 100%;
     background-size: cover;
     background-position: center;
-    align-items: center;
-    padding: 0 1rem;
+    padding: 1rem;
     margin-bottom: 1rem;
     position: relative;
   
     @include tablet {
-      height: 60vh;
-      padding: 0 2.25rem;
+
+      padding: 1.5rem 2.25rem;
       margin-bottom: 2.25rem;
     }
   
     @include desktop {
+        height: 50vw;
+        align-items: center;
+        justify-content: space-between;
       padding: 0 6.25rem;
       flex-direction: row;
     }
   
     &__title {
-        display: flex;
-        flex-direction: column;
+        
       color: $color-primary-3;
-     height: 100%;
       z-index: 1;
 
       &--sub {
-        @include subHeaderMobile
+        
+        @include subHeaderMobile;
+
+        @include tablet {
+            @include subHeaderTabDesk;
+        }
       }
       &--main {
-        @include pageHeaderMobile
+        @include pageHeaderMobile;
+
+        @include tablet {
+            @include pageHeaderTabDesk;
+            margin: 1.5rem 0;
+        }
       }
-      @include tablet {
-        @include pageHeaderTabDesk;
-        margin: 3rem 0 2.25rem 0;
-      }
+
+    
+    }
+    &__player {
+        z-index: 1; 
+        padding-top: 1rem;
+        width: 100%;
+    
+        @include tablet {
+            width: 70%;
+            padding-top: 1.5rem;
+        }
+        @include desktop {
+            width: 50%;
+        }
     }
     &::after {
       content: "";
@@ -53,12 +75,10 @@
       top: 0;
       left: 0;
     }
+
   }
  
-.hero__player {
-    z-index: 1;  
-    
-}
+
 
 .shows {
 display: flex;
