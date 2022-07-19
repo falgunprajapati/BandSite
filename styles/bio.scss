@@ -288,7 +288,6 @@ margin: 1rem;
 &__container{
   display: flex;
   justify-content: center;
-  border-bottom: 2px solid $color-secondary-2;
 
   &--img {
     height: 2.25rem;
@@ -306,10 +305,10 @@ margin: 1rem;
     width: 100%;
 
     @include tablet {
-      width: 80%;
+      width: 77%;
     }
     @include desktop {
-      width: 60%;
+      width: 58%;
     }
   }
 }  
@@ -393,7 +392,12 @@ margin: 0 auto;
     }
   }
 }
+
+
 .comment__list--item {
+  &:first-child {
+    border-top: 2px solid $color-secondary-2;
+  }
   border-bottom: 2px solid $color-secondary-2;
 }
 footer {
