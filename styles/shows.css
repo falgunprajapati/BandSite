@@ -215,6 +215,7 @@
   .shows-tabDesk__titles {
     display: flex;
     justify-content: space-between;
+    padding: 0 1rem;
   }
   .shows-tabDesk__titles p.title {
     width: 30%;
