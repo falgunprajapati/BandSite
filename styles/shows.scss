@@ -151,7 +151,7 @@ flex-direction: column;
     flex-direction: column;
     justify-content: space-between;
     border-bottom: 2px solid $color-secondary-2;
-   
+    padding: 0 1rem;
     @include tablet {
 
         &:hover{
@@ -172,7 +172,7 @@ flex-direction: column;
 
         flex-direction: row;
         align-items: center;
-        padding: 1rem 0;
+        padding: 1rem;
         .title{
             display: none;
             }

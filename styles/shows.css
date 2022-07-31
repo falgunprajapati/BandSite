@@ -169,12 +169,13 @@
   flex-direction: column;
   justify-content: space-between;
   border-bottom: 2px solid #e1e1e1;
+  padding: 0 1rem;
 }
 @media (min-width: 768px) {
   .shows__container--item {
     flex-direction: row;
     align-items: center;
-    padding: 1rem 0;
+    padding: 1rem;
   }
   .shows__container--item:hover {
     background-color: #fafafa;
