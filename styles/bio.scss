@@ -50,7 +50,7 @@ h3 {
 
   @include tablet {
     width: 9.325rem;
-    margin: .5rem;
+    margin: .5rem 0;
   }
 
   &:hover {

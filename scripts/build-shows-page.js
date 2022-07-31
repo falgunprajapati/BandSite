@@ -1,3 +1,5 @@
+// list of shows array
+
 let shows = [
     {
       date: "Mon Sept 06 2022",
@@ -32,34 +34,75 @@ let shows = [
     
   ];
 
+//DOM Element Selectors
 
 const showsListMobile = document.getElementById('showsListMobile');
 
-///for mobile view
-function displayShowsMob(show) {
-    // created div inside the comment list container
+function displayShows(shows) {
+  for ( let i=0; i < shows.length; i++ ) {
 
     const showsDiv = document.createElement('div');
-    showsDiv.className = 'shows__container--mobile';
+    showsDiv.classList.add = 'shows__container--mobile';
+    
+    const showsContainerItem = document.createElement('div');
+    showsContainerItem.classList.add('shows__container--item')
 
-    showsDiv.innerHTML = `
-      <div class="shows__container--item">
-        <p class="title">Date</p>
-        <p class="property-date">${show.date}</p>
-      </div>
-      <div class="shows__container--item">
-        <p class="title">Venue</p>
-        <p class="property">${show.venue}</p>
-      </div>
-      <div class="shows__container--item">
-        <p class="title">Location</p>
-        <p class="property">${show.location}</p>
-      </div>
-      <button class="btn shows__btn">BUY TICKET</button>
-    </div>
-    `;
-    showsListMobile.appendChild(showsDiv)
-}
+    const showsContainerDate = document.createElement('div');
+    showsContainerDate.classList.add('shows__container--date');
 
-shows.map(displayShowsMob);
-// shows.map(displayShowsTabDesk);
+    const showsContainerVenue = document.createElement('div');
+    showsContainerVenue.classList.add('shows__container--venue');
+
+    const showsContainerLocation = document.createElement('div');
+    showsContainerLocation.classList.add('shows__container--location');
+
+    const titleDate = document.createElement('p');
+    titleDate.classList.add('title-date', 'title');
+    titleDate.innerText = 'Date';
+
+    const titleVenue = document.createElement('p');
+    titleVenue.classList.add('title-venue','title');
+    titleVenue.innerText ='Venue';
+
+    const titleLoction = document.createElement('p');
+    titleLoction.classList.add('title-location','title');
+    titleLoction.innerText = 'Location';
+
+    const propertyDate = document.createElement('p');
+    propertyDate.classList.add('property-date');
+    propertyDate.innerText = shows[i].date;
+    
+    const propertyVenue = document.createElement('p');
+    propertyVenue.classList.add('property-venue');
+    propertyVenue.innerText =  shows[i].venue;
+
+    const propertyLocation = document.createElement('p');
+    propertyLocation.classList.add('property-location');
+    propertyLocation.innerText =  shows[i].location;
+
+    const button = document.createElement('button');
+    button.classList.add('btn');
+    button.innerText = 'BUY TICKET';
+
+    showsContainerDate.appendChild(titleDate)
+    showsContainerDate.appendChild(propertyDate)
+
+    showsContainerVenue.appendChild(titleVenue)
+    showsContainerVenue.appendChild(propertyVenue)
+
+    showsContainerLocation.appendChild(titleLoction)
+    showsContainerLocation.appendChild(propertyLocation)
+
+  
+
+    showsContainerItem.appendChild(showsContainerDate)
+    showsContainerItem.appendChild(showsContainerVenue)
+    showsContainerItem.appendChild(showsContainerLocation)
+    showsContainerItem.appendChild(button)
+    
+    showsListMobile.appendChild(showsContainerItem)
+
+  }
+ }
+
+ displayShows(shows)

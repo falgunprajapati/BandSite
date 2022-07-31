@@ -28,29 +28,8 @@ const formName = document.getElementById('formName');
 const formComment = document.getElementById('formComment');
 const formSubmit = document.getElementById('formSubmit');
 
-/// funtion to display comments
 
-function displayComment(comment) {
-    // created div inside the comment list container
-
-    const commentDiv = document.createElement('div');
-    commentDiv.className = 'comment__list--item';
-
-    commentDiv.innerHTML = `
-    <div class="comment-area">
-    <div class="comment-area__userimg"><img class="comment__container--img" ></div>
-
-    <div class="comment-area__content">
-    <p class="comment__list--user">${comment.name} <small class="comment__list--timestamp">${comment.timestamp}</small></p>
-   
-    <p class="comment__list--text">${comment.comment}</p>
-    </div>
-
-    </div>`;
-
- commentContainer.appendChild(commentDiv);
- 
-}
+displayComment(commentList)
 
 formSubmit.addEventListener('click', (event) => {
     event.preventDefault();
@@ -70,8 +49,9 @@ formSubmit.addEventListener('click', (event) => {
 
         formName.value = '';
         formComment.value = '';
-    
-        commentList.map(displayComment);
+        
+        displayComment(commentList)
+        
     }
     else {
         alert('Invalid comment')
@@ -79,4 +59,57 @@ formSubmit.addEventListener('click', (event) => {
    
 })
 
-commentList.map(displayComment);
+///Function to Display comments
+
+function displayComment(commentList) {
+
+
+ for ( let i=0; i < commentList.length; i++) {
+ 
+  const commentDiv = document.createElement('div');
+    commentDiv.classList.add('comment__list--item');
+
+    const commentArea = document.createElement('div')
+    commentArea.classList.add('comment-area')
+    
+    const commentAreaUserImg = document.createElement('div')
+    commentAreaUserImg.classList.add('comment-area__userimg')
+    
+    const commentContainerImg = document.createElement('img')
+    commentContainerImg.classList.add('comment__container--img')
+
+    const commentAreaContent = document.createElement('div')
+    commentAreaContent.classList.add('comment-area__content')
+
+    const commentListUser = document.createElement('p')
+    commentListUser.classList.add('comment__list--user')
+
+    const commentListUserSpan = document.createElement('span')
+    commentListUserSpan.innerText = commentList[i].name
+   
+    const commentListTimestamp = document.createElement('small')
+    commentListTimestamp.classList.add('comment__list--timestamp')
+    commentListTimestamp.innerText = commentList[i].timestamp
+
+    const commentListText = document.createElement('p')
+    commentListText.classList.add('comment__list--text')
+    commentListText.innerText = commentList[i].comment
+
+
+commentListUser.appendChild(commentListUserSpan)
+commentListUser.appendChild(commentListTimestamp)
+
+commentAreaContent.appendChild(commentListUser)
+commentAreaContent.appendChild(commentListText)
+
+commentAreaUserImg.appendChild(commentContainerImg)
+
+commentArea.appendChild(commentAreaUserImg)
+commentArea.appendChild(commentAreaContent)
+
+commentDiv.appendChild(commentArea)    
+
+commentContainer.appendChild(commentDiv);
+
+}
+}

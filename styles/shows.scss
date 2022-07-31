@@ -137,36 +137,49 @@ flex-direction: column;
     border-bottom: 2px solid $color-secondary-2;
     transition: all 0.2s;
     
-    &:hover{
-        background-color: $color-secondary-3; 
-    }
-    &:active{
-        background-color: $color-secondary-2;
-    }
+    
     @include tablet {
         flex-direction: row;  
         align-items:center; 
         margin-bottom: 0;  
+
+      
     }
 }
-   
 .shows__container--item {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    
+    border-bottom: 2px solid $color-secondary-2;
    
     @include tablet {
-        width: 30%;
-        margin: 1rem 0;
+
+        &:hover{
+            background-color: $color-secondary-3; 
+        }
+        &:active{
+            background-color: $color-secondary-2;
+        }
+        .shows__container--date {
+            width: 30%;
+        }
+        .shows__container--venue {
+            width: 30%;
+        }
+        .shows__container--location {
+            width: 30%;
+        }
+
+        flex-direction: row;
+        align-items: center;
+        padding: 1rem 0;
         .title{
-                display: none;
+            display: none;
             }
         }
         
     }
    
-
 
 
 
