@@ -1,38 +1,9 @@
-// list of shows array
+//shows list api
 
-let shows = [
-    {
-      date: "Mon Sept 06 2022",
-      venue: "Ronald Lane",
-      location: "San Francisco, CA",
-    },
-    {
-      date: "Tue Sept 21 2022",
-      venue: "Pier 3 East",
-      location: "San Francisco, CA",
-    },
-    {
-      date: "Fri Oct 15 2022",
-      venue: "View Lounge",
-      location: "San Francisco, CA",
-    },
-    {
-      date: "Sat Nov 06 2022",
-      venue: "Hyatt Agency",
-      location: "San Francisco, CA",
-    },
-    {
-      date: "Fri Nov 26 2022",
-      venue: "Moscow Center",
-      location: "San Francisco, CA",
-    },
-    {
-      date: "Wed Dec 15 2022",
-      venue: "Press Club",
-      location: "San Francisco, CA",
-    },
-    
-  ];
+axios.get("https://project-1-api.herokuapp.com/showdates?api_key=%27994131b0-aabb-4f67-893a-b56855e451c2")
+.then((response) => {
+  displayShows(response.data);
+})
 
 //DOM Element Selectors
 
@@ -70,11 +41,11 @@ function displayShows(shows) {
 
     const propertyDate = document.createElement('p');
     propertyDate.classList.add('property-date');
-    propertyDate.innerText = shows[i].date;
+    propertyDate.innerText = new Date(+(shows[i].date)).toUTCString().slice(0,16);
     
     const propertyVenue = document.createElement('p');
     propertyVenue.classList.add('property-venue');
-    propertyVenue.innerText =  shows[i].venue;
+    propertyVenue.innerText =  shows[i].place;
 
     const propertyLocation = document.createElement('p');
     propertyLocation.classList.add('property-location');
@@ -83,6 +54,7 @@ function displayShows(shows) {
     const button = document.createElement('button');
     button.classList.add('btn');
     button.innerText = 'BUY TICKET';
+
 
     showsContainerDate.appendChild(titleDate)
     showsContainerDate.appendChild(propertyDate)
@@ -104,5 +76,3 @@ function displayShows(shows) {
 
   }
  }
-
- displayShows(shows)

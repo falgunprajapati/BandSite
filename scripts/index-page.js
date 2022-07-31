@@ -1,25 +1,9 @@
-// list of comment array
+// comment array api
 
-let commentList =  [
-    {
-      name: 'Connor Walton',
-      comment: 'This is art. This is inexplicable magic expressed in the purest way, everything that makes up this majestic work deserves reverence. Let us appreciate this for what it is and what it contains.',
-      timestamp: '02/17/2021',
-      
-    },
-    {
-      name: 'Emilie Beach',
-      comment: 'I feel blessed to have seen them in person. What a show! They were just perfection. If there was one day of my life I could relive, this would be it. What an incredible day.',
-      timestamp: '02/17/2021',
-    
-    },
-    {
-      name: 'Miles Acosta',
-      comment: 'I can\'t stop listening. Every time I hear one of their songs - the vocals - it gives me goosebumps. Shivers straight down my spine. What a beautiful expression of creativity. Can\'t get enough.',
-      timestamp: '02/17/2021',
-    
-    }
-] 
+axios.get("https://project-1-api.herokuapp.com/comments?api_key=%27994131b0-aabb-4f67-893a-b56855e451c2")
+.then((response) => {
+  displayComment(response.data);
+})
 
 //DOM elements selectors
 
@@ -29,30 +13,42 @@ const formComment = document.getElementById('formComment');
 const formSubmit = document.getElementById('formSubmit');
 
 
-displayComment(commentList)
-
 formSubmit.addEventListener('click', (event) => {
     event.preventDefault();
     const newName = formName.value;
     const newComment = formComment.value;
     const newTimeStamp = new Date().toLocaleDateString();
-    const commentObj = {
-        name: newName,
-        comment: newComment,
-        timestamp: newTimeStamp
-    }
+    
 
     if( newName && newComment) {
-        commentList.unshift(commentObj);
+        
+        const commentObj = {
+          name: newName,
+          comment: newComment,
+      }
+        axios.post("https://project-1-api.herokuapp.com/comments?api_key=%27994131b0-aabb-4f67-893a-b56855e451c2", commentObj,{
+          headers: {
+            "Content-Type": "application/json",
+          },
+        } )
+        .then((res) => {
+          console.log(res);
+          axios.get("https://project-1-api.herokuapp.com/comments?api_key=%27994131b0-aabb-4f67-893a-b56855e451c2")
+            .then((res) => {
+              const newComments = res.data;
+              displayComment(newComments);
+            });
+        })
+        
+        console.log('hi')
 
         commentContainer.innerHTML = '';
 
         formName.value = '';
         formComment.value = '';
         
-        displayComment(commentList)
-        
     }
+
     else {
         alert('Invalid comment')
     }
@@ -89,7 +85,7 @@ function displayComment(commentList) {
    
     const commentListTimestamp = document.createElement('small')
     commentListTimestamp.classList.add('comment__list--timestamp')
-    commentListTimestamp.innerText = commentList[i].timestamp
+    commentListTimestamp.innerText = new Date(commentList[i].timestamp).toUTCString().slice(0,16);
 
     const commentListText = document.createElement('p')
     commentListText.classList.add('comment__list--text')
