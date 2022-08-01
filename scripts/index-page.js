@@ -1,8 +1,8 @@
 // comment array api
 
-axios.get("https://project-1-api.herokuapp.com/comments?api_key=%27994131b0-aabb-4f67-893a-b56855e451c2")
+axios.get("https://project-1-api.herokuapp.com/comments?api_key=%1818dc08-cb64-416f-8b2c-b696494b0038")
 .then((response) => {
-  displayComment(response.data);
+  displayComment(response.data.reverse());
 })
 
 //DOM elements selectors
@@ -26,16 +26,16 @@ formSubmit.addEventListener('click', (event) => {
           name: newName,
           comment: newComment,
       }
-        axios.post("https://project-1-api.herokuapp.com/comments?api_key=%27994131b0-aabb-4f67-893a-b56855e451c2", commentObj,{
+        axios.post("https://project-1-api.herokuapp.com/comments?api_key=%1818dc08-cb64-416f-8b2c-b696494b0038", commentObj,{
           headers: {
             "Content-Type": "application/json",
           },
         } )
         .then((res) => {
           console.log(res);
-          axios.get("https://project-1-api.herokuapp.com/comments?api_key=%27994131b0-aabb-4f67-893a-b56855e451c2")
+          axios.get("https://project-1-api.herokuapp.com/comments?api_key=%1818dc08-cb64-416f-8b2c-b696494b0038")
             .then((res) => {
-              const newComments = res.data;
+              const newComments = res.data.reverse();
               displayComment(newComments);
             });
         })

@@ -1,6 +1,6 @@
 //shows list api
 
-axios.get("https://project-1-api.herokuapp.com/showdates?api_key=%27994131b0-aabb-4f67-893a-b56855e451c2")
+axios.get("https://project-1-api.herokuapp.com/showdates?api_key=%1818dc08-cb64-416f-8b2c-b696494b0038")
 .then((response) => {
   displayShows(response.data);
 })
